@@ -5,3 +5,10 @@
 @code {
 	private List<ToDoItem> toDos = new();
 }
+
+<ul>
+	@foreach (var toDos in toDos)
+	{
+		<li>@toDos.Title</li>
+	}
+</ul>
