@@ -12,3 +12,20 @@
 		<li>@toDos.Title</li>
 	}
 </ul>
+
+<input @bind="newToDo"/>
+<button @onclick="AddToDo">Add Item</button>
+
+@code{
+	private List<ToDoItem> todos = new();
+	string newToDo = "";
+
+	void AddToDo()
+	{
+		if (!string.IsNullOrEmpty(newToDo))
+		{
+			toDos.Add(new ToDoItem { Title = newToDo });
+			newToDo = string.Empty;
+		}
+	}
+}
