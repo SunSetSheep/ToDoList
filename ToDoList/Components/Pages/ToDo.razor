@@ -1,6 +1,6 @@
 ﻿@page "/ToDo"
 @rendermode InteractiveServer
-<h3>ToDo (@toDos.Count(toDo => !toDo.Status))</h3>
+<h3 style="text-align: center">ToDo (@toDos.Count(toDo => !toDo.Status))</h3>
 
 @code {
 	private List<ToDoItem> toDos = new();
