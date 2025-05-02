@@ -1,15 +1,18 @@
 ﻿@page "/ToDo"
 @rendermode InteractiveServer
-<h3>ToDo</h3>
+<h3>ToDo (@toDos.Count(toDo => !toDo.Status))</h3>
 
 @code {
 	private List<ToDoItem> toDos = new();
 }
 
 <ul>
-	@foreach (var toDos in toDos)
+	@foreach (var toDo in toDos)
 	{
-		<li>@toDos.Title</li>
+		<li>
+			<input type="checkbox" @bind="toDo.Status"/>
+			<input @bind="toDo.Title"/>
+		</li>
 	}
 </ul>
 
